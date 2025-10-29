@@ -1,0 +1,230 @@
+{
+  "last_updated": "2025-01-15",
+  "group": "3281",
+  "specialization": "ИСТ-БИС",
+  "institute": "Институт системного анализа и управления",
+  "schedule": [
+    {
+      "day_of_week": "понедельник",
+      "pair_number": 1,
+      "time_start": "09:00",
+      "time_end": "10:30",
+      "subject": "РПБД",
+      "class_type": "Практика",
+      "lecturer": "Тимонина Л.С.",
+      "classroom": "1-319",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "понедельник",
+      "pair_number": 2,
+      "time_start": "10:40",
+      "time_end": "12:10",
+      "subject": "Физическая культура",
+      "class_type": "Практика",
+      "lecturer": "",
+      "classroom": "с/к Олимп",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "понедельник",
+      "pair_number": 3,
+      "time_start": "12:50",
+      "time_end": "14:20",
+      "subject": "Операционные системы",
+      "class_type": "Лекция",
+      "lecturer": "Сычев П.П.",
+      "classroom": "1-118",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "понедельник",
+      "pair_number": 4,
+      "time_start": "14:30",
+      "time_end": "16:00",
+      "subject": "Иностр.язык в ПД",
+      "class_type": "Практика",
+      "lecturer": "Балаян А.М.",
+      "classroom": "4-417",
+      "week_parity": "always"
+    },
+
+    {
+      "day_of_week": "вторник",
+      "pair_number": 2,
+      "time_start": "10:40",
+      "time_end": "12:10",
+      "subject": "Численные методы",
+      "class_type": "Лекция",
+      "lecturer": "Токарева Н.А.",
+      "classroom": "1-118",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "вторник",
+      "pair_number": 3,
+      "time_start": "12:50",
+      "time_end": "14:20",
+      "subject": "Численные методы",
+      "class_type": "Практика",
+      "lecturer": "Токарева Н.А.",
+      "classroom": "1-414",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "вторник",
+      "pair_number": 4,
+      "time_start": "14:30",
+      "time_end": "16:00",
+      "subject": "Философия",
+      "class_type": "Практика",
+      "lecturer": "Рац Н.А.",
+      "classroom": "4-317",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "вторник",
+      "pair_number": 6,
+      "time_start": "17:50",
+      "time_end": "19:20",
+      "subject": "Операционные системы",
+      "class_type": "ДОТ",
+      "lecturer": "Гусев Д.В.",
+      "classroom": "Дистанционно",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "четверг",
+      "pair_number": 1,
+      "time_start": "09:00",
+      "time_end": "10:30",
+      "subject": "Технологии программирования",
+      "class_type": "Практика",
+      "lecturer": "Беднякова Т.М.",
+      "classroom": "1-416",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "четверг",
+      "pair_number": 2,
+      "time_start": "10:40",
+      "time_end": "12:10",
+      "subject": "Философия",
+      "class_type": "Лекция",
+      "lecturer": "Боклагов Е.Н.",
+      "classroom": "4-415",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "четверг",
+      "pair_number": 3,
+      "time_start": "12:50",
+      "time_end": "14:20",
+      "subject": "РПБД",
+      "class_type": "Лекция",
+      "lecturer": "Иванцова О.В.",
+      "classroom": "1-120",
+      "week_parity": "odd"
+    },
+    {
+      "day_of_week": "четверг",
+      "pair_number": 5,
+      "time_start": "16:10",
+      "time_end": "17:40",
+      "subject": "Популярные лекции",
+      "class_type": "Лекция",
+      "lecturer": "",
+      "classroom": "1-120",
+      "week_parity": "always"
+    },
+
+    {
+      "day_of_week": "пятница",
+      "pair_number": 1,
+      "time_start": "09:00",
+      "time_end": "10:30",
+      "subject": "Технология программирования",
+      "class_type": "Лекция",
+      "lecturer": "Беднякова Т.М.",
+      "classroom": "4-315",
+      "week_parity": "odd"
+    },
+    {
+      "day_of_week": "пятница",
+      "pair_number": 1,
+      "time_start": "09:00",
+      "time_end": "10:30",
+      "subject": "Поиск, сбор и анализ информации",
+      "class_type": "Практика",
+      "lecturer": "Минзов А.С.",
+      "classroom": "1-321",
+      "week_parity": "even"
+    },
+    {
+      "day_of_week": "пятница",
+      "pair_number": 2,
+      "time_start": "10:40",
+      "time_end": "12:10",
+      "subject": "Поиск, сбор и анализ информации",
+      "class_type": "Лекция",
+      "lecturer": "Минзов А.С.",
+      "classroom": "1-321",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "пятница",
+      "pair_number": 3,
+      "time_start": "12:50",
+      "time_end": "14:20",
+      "subject": "Управление информационной безопасностью",
+      "class_type": "Лекция",
+      "lecturer": "Минзов А.С.",
+      "classroom": "1-321",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "пятница",
+      "pair_number": 4,
+      "time_start": "14:30",
+      "time_end": "16:00",
+      "subject": "Управление информационной безопасностью",
+      "class_type": "Практика",
+      "lecturer": "Минзов А.С.",
+      "classroom": "1-321",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "пятница",
+      "pair_number": 5,
+      "time_start": "16:10",
+      "time_end": "17:40",
+      "subject": "Элективные дисциплины по ФКС",
+      "class_type": "Практика",
+      "lecturer": "",
+      "classroom": "с/к Олимп",
+      "week_parity": "always"
+    },
+    {
+      "day_of_week": "суббота",
+      "pair_number": 3,
+      "time_start": "12:50",
+      "time_end": "14:20",
+      "subject": "Операционные системы",
+      "class_type": "Практика",
+      "lecturer": "Гусев Д.В.",
+      "classroom": "1-212",
+      "week_parity": "even"
+    },
+    {
+      "day_of_week": "суббота",
+      "pair_number": 4,
+      "time_start": "14:30",
+      "time_end": "16:00",
+      "subject": "Операционные системы",
+      "class_type": "Практика",
+      "lecturer": "Гусев Д.В.",
+      "classroom": "1-212",
+      "week_parity": "even"
+    }
+  ]
+}
