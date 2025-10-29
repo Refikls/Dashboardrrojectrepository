@@ -9,7 +9,7 @@ from components.sidebar import create_sidebar
 
 app = dash.Dash(
     __name__, 
-    external_stylesheets=[dbc.themes.BOOTSTRAP],
+    external_stylesheets=[dbc.themes.SUPERHERO],
     suppress_callback_exceptions=True
 )
 server = app.server

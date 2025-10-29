@@ -6,13 +6,13 @@ def create_navbar():
     navbar = dbc.NavbarSimple(
         brand=html.Span(
             [
-            html.Img(src=LOGO_PATH, height="30px", style={"marginRight": "10px"}),
+            html.Img(src=LOGO_PATH, height="45px", style={"marginRight": "10px"}),
             
                 "Дашборд Студента"
             ]
         ),
         brand_href="/",
-        color="primary",
+        color="dark",
         dark=True,
         fixed="top",
     )
