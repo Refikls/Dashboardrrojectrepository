@@ -43,3 +43,30 @@ def create_schedule_layout():
             ], width=9)
         ])
     ])
+
+
+def create_schedule_table(lessons):
+    if not lessons:
+        return html.P("Нет занятий на выбранную дату")
+    
+    headers = ['Время', 'Предмет', 'Преподаватель', 'Аудитория']
+    
+    table_header = [html.Thead(html.Tr([html.Th(h) for h in headers]))]
+    
+    table_rows = []
+    for lesson in lessons:
+        table_rows.append(html.Tr([
+            html.Td(lesson['time']),
+            html.Td(lesson['subject']),
+            html.Td(lesson['teacher']),
+            html.Td(lesson.get('room', '—'))
+        ]))
+    
+    table_body = html.Tbody(table_rows)
+    
+    return dbc.Table(
+        [table_header, table_body],
+        striped=True,
+        bordered=True,
+        hover=True
+    )

@@ -8,8 +8,8 @@ from components.navbar import create_navbar
 from components.sidebar import create_sidebar
 
 ### Интеграция schedule
-from components.schedule.layout import create_schedule_layout
-from components.schedule.callbacks import register_schedule_callbacks
+from schedule.layout import create_schedule_layout
+from schedule.callbacks import register_schedule_callbacks
 
 app = dash.Dash(
     __name__, 
