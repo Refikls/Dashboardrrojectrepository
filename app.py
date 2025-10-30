@@ -6,8 +6,6 @@ from dash.dependencies import Input, Output
 
 from components.navbar import create_navbar
 from components.sidebar import create_sidebar
-
-### Интеграция schedule
 from schedule.layout import create_schedule_layout
 from schedule.callbacks import register_schedule_callbacks
 
@@ -34,7 +32,6 @@ app.layout = html.Div([
     html.Div(id="page-content", style=CONTENT_STYLE)
 ])
 
-# Регистрируем callback'и
 register_schedule_callbacks(app)
 
 @app.callback(
@@ -45,8 +42,7 @@ def display_page(pathname):
     if pathname == "/":
         return html.H1("Главная страница")
     elif pathname == "/schedule":
-        return create_schedule_layout()  # Используем модуль расписания
-    #html.H1("Расписание")
+        return create_schedule_layout()  
     elif pathname == "/news":
         return html.H1("Новости")
     elif pathname == "/events":
