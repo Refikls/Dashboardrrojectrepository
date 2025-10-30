@@ -5,6 +5,9 @@ from dash.dependencies import Input, Output, State
 import dash.html as html
 import dash_bootstrap_components as dbc
 
+from .data import get_schedule
+from .layout import create_schedule_table  # Импортируем функцию таблицы
+
 def register_schedule_callbacks(app):
     @app.callback(
         Output("schedule-table", "children"),
