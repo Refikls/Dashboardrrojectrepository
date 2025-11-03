@@ -1,15 +1,12 @@
-# Разметка модуля
-
-
 import dash.html as html
 import dash.dcc as dcc
 import dash_bootstrap_components as dbc
+from datetime import datetime
 
 def create_schedule_layout():
     return dbc.Container([
         html.H1("📅 Расписание", className="mb-4"),
         
-        # Фильтры и управление
         dbc.Row([
             dbc.Col([
                 dbc.Card([
@@ -18,28 +15,29 @@ def create_schedule_layout():
                         dcc.Dropdown(
                             id='group-filter',
                             options=[
-                                {'label': 'Группа 1', 'value': 'group1'},
-                                {'label': 'Группа 2', 'value': 'group2'},
+                                {'label': 'Группа 3281', 'value': '3281'}, 
                             ],
-                            placeholder="Выберите группу"
+                            value='3281',
+                            placeholder="Выберите группу",
+                            clearable=False
                         ),
                         dcc.DatePickerSingle(
                             id='date-picker',
                             display_format='DD.MM.YYYY',
-                            className="mt-3"
+                            className="mt-3 w-100",
+                            date=datetime.today().date()
                         )
                     ])
                 ])
-            ], width=3),
+            ], width=4, md=3),
             
-            # Основное расписание
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H4("Расписание занятий", className="card-title"),
+                        html.H4(id="schedule-title", className="card-title"),
                         html.Div(id="schedule-table")
                     ])
                 ])
-            ], width=9)
+            ], width=8, md=9)
         ])
     ])
