@@ -8,6 +8,8 @@ from components.navbar import create_navbar
 from components.sidebar import create_sidebar
 from schedule.layout import create_schedule_layout
 from schedule.callbacks import register_schedule_callbacks
+from news.layout import create_news_layout
+from news.callbacks import register_news_callbacks
 
 app = dash.Dash(
     __name__, 
@@ -33,6 +35,7 @@ app.layout = html.Div([
 ])
 
 register_schedule_callbacks(app)
+register_news_callbacks(app)
 
 @app.callback(
     Output("page-content", "children"),
@@ -42,9 +45,9 @@ def display_page(pathname):
     if pathname == "/":
         return html.H1("Главная страница")
     elif pathname == "/schedule":
-        return create_schedule_layout()  
+        return create_schedule_layout()
     elif pathname == "/news":
-        return html.H1("Новости")
+        return create_news_layout()
     elif pathname == "/events":
         return html.H1(" Мероприятия")
     elif pathname == "/services":
