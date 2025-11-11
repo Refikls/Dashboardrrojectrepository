@@ -8,26 +8,33 @@ SIDEBAR_STYLE = {
     "bottom": 0,
     "width": "16rem",
     "padding": "2rem 1rem",
-  #  "background-color": "#f8f9fa",
 }
 
-def create_sidebar():
+def create_sidebar(role):
+    
+    common_links = [
+        dbc.NavLink("Главная", href="/", active="exact"),
+        dbc.NavLink("Расписание", href="/schedule", active="exact"),
+        dbc.NavLink("Новости", href="/news", active="exact"),
+        dbc.NavLink("Мероприятия", href="/events", active="exact"),
+    ]
+    
+    role_specific_links = []
+
+    if role == 'student':
+        role_specific_links = [
+            dbc.NavLink("Студ. Сервисы", href="/services", active="exact"),
+            dbc.NavLink("Котики (Поддержка)", href="/cats", active="exact"),
+        ]
+    elif role == 'staff':
+        role_specific_links = [
+            dbc.NavLink("Сервисы Сотрудника", href="/services-staff", active="exact"),
+        ]
+
+    common_links.extend(role_specific_links)
+    
     sidebar = html.Div(
-        [
-            html.H4("Навигация", style={"textAlign": "center"}),
-            html.Hr(),
-            dbc.Nav(
-                [
-                    dbc.NavLink("Главная", href="/", active="exact"),
-                    dbc.NavLink("Расписание", href="/schedule", active="exact"),
-                    dbc.NavLink("Новости", href="/news", active="exact"),
-                    dbc.NavLink("Мероприятия", href="/events", active="exact"),
-                    dbc.NavLink("Сервисы", href="/services", active="exact"),
-                ],
-                vertical=True,
-                pills=True,
-            ),
-        ],
+        dbc.Nav(common_links, vertical=True, pills=True),
         style=SIDEBAR_STYLE,
     )
     return sidebar

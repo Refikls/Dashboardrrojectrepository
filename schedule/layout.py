@@ -3,14 +3,14 @@ import dash.dcc as dcc
 import dash_bootstrap_components as dbc
 from datetime import datetime
 
-def create_schedule_layout():
+def create_schedule_layout(role):
     return dbc.Container([
         html.H1("📅 Расписание", className="mb-4"),
         
         dbc.Row([
             dbc.Col([
                 dbc.Card([
-                    dbc.CardBody([
+                    dbc.CardBody(className="dbc", children=[
                         html.H4("Фильтры", className="card-title"),
                         dcc.Dropdown(
                             id='group-filter',
