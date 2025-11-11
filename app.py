@@ -9,6 +9,7 @@ from components.sidebar import create_sidebar
 
 from schedule.layout import create_schedule_layout
 from schedule.callbacks import register_schedule_callbacks
+
 from news.layout import create_news_layout
 from news.callbacks import register_news_callbacks
 
@@ -39,6 +40,35 @@ register_news_callbacks(app)
 register_login_callbacks(app) 
 register_reg_callbacks(app)
 
+def create_test_dashboard():
+    return dbc.Container([
+        html.H1("Главная (Тестовый режим)", className="mb-4"),
+        dbc.Row([
+            dbc.Col(md=6, children=[
+                dbc.Card(
+                    dbc.CardBody([
+                        html.H4("Расписание на сегодня", className="card-title"),
+                        dbc.ListGroup([
+                            dbc.ListGroupItem("09:00 - 10:30 | Математика (Лекция)"),
+                            dbc.ListGroupItem("10:40 - 12:10 | Физика (Практика)"),
+                        ], flush=True)
+                    ])
+                )
+            ]),
+            dbc.Col(md=6, children=[
+                dbc.Card(
+                    dbc.CardBody([
+                        html.H4("Последние новости", className="card-title"),
+                        dbc.ListGroup([
+                            dbc.ListGroupItem("Изменение в расписании занятий"),
+                            dbc.ListGroupItem("Набор на хакатон по программированию"),
+                        ], flush=True)
+                    ])
+                )
+            ]),
+        ])
+    ])
+
 @app.callback(
     Output("page-container", "children"),
     Input("url", "pathname"),
@@ -46,11 +76,9 @@ register_reg_callbacks(app)
 )
 def display_page(pathname, session_data):
     
-    role = session_data.get('role') if session_data else None
-    
     login_pages = ['/login', '/register']
     
-    if not role:
+    if not session_data:
         if pathname in login_pages:
             if pathname == '/login':
                 return create_login_layout()
@@ -65,11 +93,11 @@ def display_page(pathname, session_data):
     page_content = None
     
     if pathname == "/":
-        page_content = html.H1("Главная страница")
+        page_content = create_test_dashboard()
     elif pathname == "/schedule":
-        page_content = create_schedule_layout(role)
+        page_content = create_schedule_layout(session_data)
     elif pathname == "/news":
-        page_content = create_news_layout(role)
+        page_content = create_news_layout(session_data)
     elif pathname == "/events":
         page_content = html.H1(" Мероприятия")
     elif pathname == "/services":
@@ -86,7 +114,7 @@ def display_page(pathname, session_data):
 
     return html.Div([
         create_navbar(),
-        create_sidebar(role),
+        create_sidebar(session_data),
         html.Div(id="page-content", style=CONTENT_STYLE, children=page_content)
     ])
 

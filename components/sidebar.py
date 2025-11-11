@@ -10,8 +10,10 @@ SIDEBAR_STYLE = {
     "padding": "2rem 1rem",
 }
 
-def create_sidebar(role):
+def create_sidebar(session_data):
     
+    base_role = session_data.get('base_role', 'student')
+
     common_links = [
         dbc.NavLink("Главная", href="/", active="exact"),
         dbc.NavLink("Расписание", href="/schedule", active="exact"),
@@ -21,12 +23,12 @@ def create_sidebar(role):
     
     role_specific_links = []
 
-    if role == 'student':
+    if base_role == 'student':
         role_specific_links = [
             dbc.NavLink("Студ. Сервисы", href="/services", active="exact"),
             dbc.NavLink("Котики (Поддержка)", href="/cats", active="exact"),
         ]
-    elif role == 'staff':
+    elif base_role == 'staff':
         role_specific_links = [
             dbc.NavLink("Сервисы Сотрудника", href="/services-staff", active="exact"),
         ]
