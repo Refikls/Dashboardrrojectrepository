@@ -9,9 +9,11 @@ from components.sidebar import create_sidebar
 
 from schedule.layout import create_schedule_layout
 from schedule.callbacks import register_schedule_callbacks
-
 from news.layout import create_news_layout
 from news.callbacks import register_news_callbacks
+
+from events.layout import create_events_layout
+from events.callbacks import register_events_callbacks
 
 from pages.login import create_login_layout, register_login_callbacks
 from pages.register import create_register_layout, register_reg_callbacks
@@ -37,6 +39,7 @@ app.layout = html.Div([
 
 register_schedule_callbacks(app)
 register_news_callbacks(app)
+register_events_callbacks(app) 
 register_login_callbacks(app) 
 register_reg_callbacks(app)
 
@@ -100,8 +103,10 @@ def display_page(pathname, session_data):
         page_content = create_schedule_layout(role)
     elif pathname == "/news":
         page_content = create_news_layout(role) 
+    
     elif pathname == "/events":
-        page_content = html.H1(" Мероприятия")
+        page_content = create_events_layout(role) 
+    
     elif pathname == "/services":
         page_content = html.H1("Сервисы")
     else:
