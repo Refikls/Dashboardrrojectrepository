@@ -28,12 +28,25 @@ def create_login_layout():
     )
 
 def register_login_callbacks(app):
+
+    @app.callback(
+        Output('session-store', 'data', allow_duplicate=True),
+        Input('url', 'pathname'),
+        State('session-store', 'data'),
+        prevent_initial_call=True
+    )
+    def clear_session_on_login_page_load(pathname, session_data):
+        if pathname == '/login' and session_data is not None:
+            return None
+        return dash.no_update
+
     @app.callback(
         [Output("session-store", "data"),
          Output("login-alert", "children")],
         [Input("login-button", "n_clicks")],
         [State("login-email", "value"),
-         State("login-password", "value")]
+         State("login-password", "value")],
+        prevent_initial_call=True
     )
     def handle_login(n_clicks, email, password):
         if n_clicks == 0 or not email or not password:

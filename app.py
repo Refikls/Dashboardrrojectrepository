@@ -80,8 +80,7 @@ def create_test_dashboard():
 def display_page(pathname, session_data):
     
     if pathname == "/logout":
-        session_data = None
-        return create_login_layout()
+        return dcc.Location(pathname="/login", id="redirect-to-login")
 
     login_pages = ['/login', '/register']
     
