@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 from users_db import check_user
 import dash
+import pandas as pd
 
 def create_login_layout():
     return dbc.Container(
@@ -38,9 +39,20 @@ def register_login_callbacks(app):
         if n_clicks == 0 or not email or not password:
             return dash.no_update, ""
 
-        role = check_user(email, password)
+        base_role, permissions_str = check_user(email, password)
         
-        if role:
-            return {'role': role}, dbc.Alert(f"Успех! Вход как {role}", color="success")
+        if base_role:
+            
+            if pd.isna(permissions_str) or permissions_str == "":
+                permissions_list = []
+            else:
+                permissions_list = str(permissions_str).replace(" ", "").split(',')
+
+            session_data = {
+                'base_role': base_role,
+                'permissions': permissions_list
+            }
+            
+            return session_data, dbc.Alert(f"Успех! Вход как {base_role}", color="success")
         else:
             return dash.no_update, dbc.Alert("Неверный email или пароль", color="danger")

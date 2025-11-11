@@ -3,7 +3,14 @@ import dash.dcc as dcc
 import dash_bootstrap_components as dbc
 from datetime import datetime
 
-def create_schedule_layout(role):
+def create_schedule_layout(session_data):
+    
+    user_permissions = session_data.get('permissions', [])
+    
+    edit_schedule_button = None
+    if "EDIT_SCHEDULE" in user_permissions:
+        edit_schedule_button = dbc.Button("Редактировать расписание", color="danger", className="mt-3")
+
     return dbc.Container([
         html.H1("📅 Расписание", className="mb-4"),
         
@@ -26,7 +33,8 @@ def create_schedule_layout(role):
                             display_format='DD.MM.YYYY',
                             className="mt-3 w-100",
                             date=datetime.today().date()
-                        )
+                        ),
+                        edit_schedule_button
                     ])
                 ])
             ], width=4, md=3),

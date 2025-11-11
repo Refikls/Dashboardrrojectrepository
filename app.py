@@ -79,11 +79,9 @@ def create_test_dashboard():
 )
 def display_page(pathname, session_data):
     
-    role = session_data.get('role') if session_data else None
-    
     login_pages = ['/login', '/register']
     
-    if not role:
+    if not session_data:
         if pathname in login_pages:
             if pathname == '/login':
                 return create_login_layout()
@@ -100,13 +98,11 @@ def display_page(pathname, session_data):
     if pathname == "/":
         page_content = create_test_dashboard()
     elif pathname == "/schedule":
-        page_content = create_schedule_layout(role)
+        page_content = create_schedule_layout(session_data)
     elif pathname == "/news":
-        page_content = create_news_layout(role) 
-    
+        page_content = create_news_layout(session_data)
     elif pathname == "/events":
-        page_content = create_events_layout(role) 
-    
+        page_content = create_events_layout(session_data)
     elif pathname == "/services":
         page_content = html.H1("Сервисы")
     else:
@@ -121,7 +117,7 @@ def display_page(pathname, session_data):
 
     return html.Div([
         create_navbar(),
-        create_sidebar(role),
+        create_sidebar(session_data),
         html.Div(id="page-content", style=CONTENT_STYLE, children=page_content)
     ])
 
