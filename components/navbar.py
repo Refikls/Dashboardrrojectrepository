@@ -2,18 +2,32 @@ import dash_bootstrap_components as dbc
 import dash.html as html
 
 def create_navbar():
-    LOGO_PATH = '/assets/logo.png'
-    navbar = dbc.NavbarSimple(
-        brand=html.Span(
+    navbar = dbc.Navbar(
+        dbc.Container(
             [
-            html.Img(src=LOGO_PATH, height="45px", style={"marginRight": "10px"}),
-            
-                "Дашборд Студента"
+                html.A(
+                    dbc.Row(
+                        [
+                            dbc.Col(html.Img(src="/assets/logo.png", height="30px")),
+                            dbc.Col(dbc.NavbarBrand("Портал", className="ms-2")),
+                        ],
+                        align="center",
+                        className="g-0",
+                    ),
+                    href="/",
+                    style={"textDecoration": "none"},
+                ),
+                
+                dbc.Nav(
+                    [dbc.NavLink("Выйти", href="/logout", active="exact", external_link=True)],
+                    className="ms-auto",
+                    navbar=True
+                )
             ]
         ),
-        brand_href="/",
         color="dark",
         dark=True,
         fixed="top",
+        style={"height": "3.5rem"}
     )
     return navbar
