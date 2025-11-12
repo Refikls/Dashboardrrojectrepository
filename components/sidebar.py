@@ -23,6 +23,7 @@ def create_sidebar():
                     dbc.NavLink("Новости", href="/news", active="exact"),
                     dbc.NavLink("Мероприятия", href="/events", active="exact"),
                     dbc.NavLink("Сервисы", href="/services", active="exact"),
+                    dbc.NavLink("Котики 🐱", href="/cats", active="exact"),
                 ],
                 vertical=True,
                 pills=True,

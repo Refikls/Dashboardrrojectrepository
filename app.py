@@ -6,6 +6,10 @@ from dash.dependencies import Input, Output
 
 from components.navbar import create_navbar
 from components.sidebar import create_sidebar
+from schedule.layout import create_schedule_layout
+from schedule.callbacks import register_schedule_callbacks
+from pages.events import create_events_layout
+from pages.cats import create_cats_layout
 
 app = dash.Dash(
     __name__, 
@@ -30,6 +34,8 @@ app.layout = html.Div([
     html.Div(id="page-content", style=CONTENT_STYLE)
 ])
 
+register_schedule_callbacks(app)
+
 @app.callback(
     Output("page-content", "children"),
     [Input("url", "pathname")]
@@ -38,14 +44,15 @@ def display_page(pathname):
     if pathname == "/":
         return html.H1("Главная страница")
     elif pathname == "/schedule":
-        return html.H1("Расписание")
+        return create_schedule_layout()  
     elif pathname == "/news":
         return html.H1("Новости")
     elif pathname == "/events":
-        return html.H1(" Мероприятия")
+        return create_events_layout()
     elif pathname == "/services":
         return html.H1("Сервисы")
-    
+    elif pathname == "/cats":
+        return create_cats_layout()
     return html.Div(
         [
             html.H1("404: Страница не найдена", className="text-danger"),
