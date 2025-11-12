@@ -9,14 +9,7 @@ from components.sidebar import create_sidebar
 from schedule.layout import create_schedule_layout
 from schedule.callbacks import register_schedule_callbacks
 from pages.events import create_events_layout
-try:
-    from pages.cats import create_cats_layout
-    CATS_AVAILABLE = True
-except ImportError:
-    print("Предупреждение: страница с котиками не найдена")
-    CATS_AVAILABLE = False
-    def create_cats_layout():
-        return html.H1("Раздел с котиками скоро будет доступен! 🐱")
+from pages.cats import create_cats_layout
 
 app = dash.Dash(
     __name__, 
@@ -59,10 +52,7 @@ def display_page(pathname):
     elif pathname == "/services":
         return html.H1("Сервисы")
     elif pathname == "/cats":
-            if CATS_AVAILABLE:
-                return create_cats_layout()
-            else:
-                return html.H1("Раздел с котиками в разработке 🐱")
+        return create_cats_layout()
     return html.Div(
         [
             html.H1("404: Страница не найдена", className="text-danger"),
