@@ -61,6 +61,22 @@ def register_login_callbacks(app):
             else:
                 permissions_list = str(permissions_str).replace(" ", "").split(',')
 
+            if "IS_SUPER_ADMIN" in permissions_list:
+                admin_tags = [
+                    "EDIT_NEWS", 
+                    "EDIT_SCHEDULE",
+                    "EDIT_EVENTS",
+                    "DELETE_NEWS", 
+                    "DELETE_EVENTS", 
+                    "DELETE_SCHEDULE", 
+                    "EDIT_USERS"
+                ]
+                
+                for tag in admin_tags:
+                    if tag not in permissions_list:
+                        permissions_list.append(tag)
+            # --------------------
+
             session_data = {
                 'base_role': base_role,
                 'permissions': permissions_list
