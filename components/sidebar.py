@@ -26,7 +26,6 @@ def create_sidebar(session_data):
     if base_role == 'student':
         role_specific_links = [
             dbc.NavLink("Студ. Сервисы", href="/services", active="exact"),
-            dbc.NavLink("Котики (Поддержка)", href="/cats", active="exact"),
         ]
     elif base_role == 'staff':
         role_specific_links = [
