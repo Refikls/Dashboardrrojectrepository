@@ -1,0 +1,81 @@
+{
+    "events": [
+        {
+            "id": 2,
+            "title": "Лекция от компании Яндекс",
+            "description": "Приглашенные специалисты из Яндекс проведут лекцию о современных подходах к разработке и машинному обучению.",
+            "date": "2025-01-25",
+            "time": "15:00",
+            "location": "Аудитория 1-120",
+            "type": "Лекция",
+            "is_registration_required": true,
+            "registration_link": ""
+        },
+        {
+            "id": 3,
+            "title": "Научная конференция студентов",
+            "description": "Ежегодная конференция студенческих научных работ. Лучшие работы будут опубликованы в университетском сборнике.",
+            "date": "2025-03-10",
+            "time": "09:30",
+            "location": "Конференц-зал, корпус 5a",
+            "type": "Конференция",
+            "is_registration_required": true,
+            "registration_link": "https://university.ru/conference"
+        },
+        {
+            "id": 4,
+            "title": "Мастер-класс по публичным выступлениям",
+            "description": "Практический мастер-класс от тренера по ораторскому искусству. Научимся уверенно выступать перед аудиторией.",
+            "date": "2025-01-20",
+            "time": "17:00",
+            "location": "Аудитория 2-215",
+            "type": "Мастер-класс",
+            "is_registration_required": false,
+            "registration_link": ""
+        },
+        {
+            "id": 5,
+            "title": "Спортивные соревнования по волейболу",
+            "description": "Турнир между факультетами по волейболу. Регистрация команд до 18 января.",
+            "date": "2025-01-22",
+            "time": "14:00",
+            "location": "Спортивный комплекс",
+            "type": "Спортивное соревнование",
+            "is_registration_required": true,
+            "registration_link": ""
+        },
+        {
+            "id": 6,
+            "title": "Финальное обсуждение",
+            "description": "описание",
+            "date": "2025-11-14",
+            "time": "22:00",
+            "location": "Дискорд",
+            "type": "Конференция",
+            "is_registration_required": false,
+            "registration_link": ""
+        },
+        {
+            "id": 7,
+            "title": "Финальное обсуждение 2",
+            "description": "22",
+            "date": "2025-11-15",
+            "time": "",
+            "location": "Атриум",
+            "type": "Конференция",
+            "is_registration_required": false,
+            "registration_link": ""
+        },
+        {
+            "id": 8,
+            "title": "Тест",
+            "description": "описание",
+            "date": "2025-03-01",
+            "time": "",
+            "location": "15:00",
+            "type": "Мастер-класс",
+            "is_registration_required": false,
+            "registration_link": ""
+        }
+    ]
+}

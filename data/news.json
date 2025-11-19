@@ -1,0 +1,49 @@
+{
+    "news": [
+        {
+            "id": 1,
+            "title": "Что",
+            "content": "кто",
+            "date": "2025-11-14T12:04:58.215630",
+            "category": "Мероприятие",
+            "is_important": false,
+            "image_url": ""
+        },
+        {
+            "id": 2,
+            "title": "Это новость",
+            "content": "да?",
+            "date": "2025-11-14T13:06:34.986975",
+            "category": "Стипендия",
+            "is_important": false,
+            "image_url": ""
+        },
+        {
+            "id": 3,
+            "title": "А это сурок",
+            "content": "да?",
+            "date": "2025-11-14T13:10:47.761254",
+            "category": "Стипендия",
+            "is_important": false,
+            "image_url": "https://i.pinimg.com/originals/84/e6/4a/84e64ae14bf6d6c4657f0e9b16ac6955.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Что",
+            "content": "Важно!",
+            "date": "2025-11-14T13:48:58.349555",
+            "category": "Важное объявление",
+            "is_important": false,
+            "image_url": ""
+        },
+        {
+            "id": 5,
+            "title": "Опровержение",
+            "content": "Это был не сурок",
+            "date": "2025-11-14T14:33:28.914332",
+            "category": "Важное объявление",
+            "is_important": false,
+            "image_url": ""
+        }
+    ]
+}
