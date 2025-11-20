@@ -9,6 +9,8 @@ from datetime import datetime
 from components.navbar import create_navbar
 from components.sidebar import create_sidebar
 
+from services.layout import create_services_student_layout, create_services_staff_layout
+
 from schedule.layout import create_schedule_layout
 from schedule.callbacks import register_schedule_callbacks
 from news.layout import create_news_layout
@@ -185,7 +187,10 @@ def display_page(pathname, session_data):
     elif pathname == "/events":
         page_content = create_events_layout(session_data)
     elif pathname == "/services":
-        page_content = html.H1("Сервисы (в разработке)")
+        page_content = create_services_student_layout()
+
+    elif pathname == "/services-staff":
+        page_content = create_services_staff_layout()
     else:
         page_content = html.Div(
             [
